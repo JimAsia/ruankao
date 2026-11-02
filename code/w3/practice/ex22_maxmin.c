@@ -13,10 +13,13 @@ int main(void)
     int a = 0, b = 0, c = 0;
 
     /* TODO: 读入三个数 */
-
+	scanf("%d%d%d", &a, &b, &c);
     /* TODO: 求最大值 */
-
+	int t = 0;
+	if (a > b) {t = a; a = b; b = t;}
+	if (a > c) {t = a; a = c; c = t;}
+	if (b > c) {t = b; b = c; c = t;}
     /* TODO: 求最小值 */
-
+	printf("最大值 = %d, 最小值 = %d", c, a);
     return 0;
 }

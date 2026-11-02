@@ -14,6 +14,11 @@
 int main(void)
 {
     /* TODO */
-
+	long long fac = 1;
+	for (int i = 1; i <= 10; ++i) {
+		fac *= i;
+		printf("%d! = %lld\n", i, fac);
+	}
+	
     return 0;
 }

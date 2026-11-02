@@ -64,6 +64,7 @@ int main(void)
     printf("  排序前：a=%d b=%d c=%d\n", a, b, c);
 
     /* 思路：三轮比较，保证 a 最小、c 最大 */
+	
     if (a > b) { t = a; a = b; b = t; }   /* 保证 a <= b */
     if (a > c) { t = a; a = c; c = t; }   /* 保证 a <= c，此时 a 已是最小 */
     if (b > c) { t = b; b = c; c = t; }   /* 保证 b <= c */
