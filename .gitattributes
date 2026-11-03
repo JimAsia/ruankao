@@ -1,0 +1,6 @@
+# 自动检测文本文件并归一化换行符
+* text=auto
+
+# 所有 C 源文件在仓库和工作区都强制使用 LF
+*.c   text eol=lf
+*.h   text eol=lf
