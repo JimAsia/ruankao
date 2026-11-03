@@ -24,6 +24,21 @@ int main(void)
     int a = 0, b = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d%d", &a, &b);
+	//
+	int t = 0;
+	int mul = a*b;
+	while (b != 0) {
+		t = a % b;
+		a = b;
+		b = t;
+	}
+	int m = 0;
+	m = mul / a;
+	
+	printf("最大公约数 = %d\n", a);
+	printf("最小公倍数 = %d\n", m);
+	
     return 0;
 }

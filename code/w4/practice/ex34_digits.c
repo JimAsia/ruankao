@@ -21,6 +21,20 @@ int main(void)
     int n = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d", &n);
+	// 
+	int count = 0;
+	int rev = 0;
+	int sum = 0;
+	while (n > 0) {
+		rev = rev * 10 + n % 10;
+		sum = sum + n % 10;
+		n /= 10;
+		++count;
+	}
+	printf("位数 = %d\n", count);
+	printf("各位和 = %d\n", sum);
+	printf("反转 = %d\n", rev);
     return 0;
 }

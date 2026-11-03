@@ -18,6 +18,20 @@ int main(void)
     int n = 0;
 
     /* TODO */
-
+	scanf("%d", &n);
+	
+	if (n <= 1) {
+		printf("不是");
+	}
+	else {
+		for (int i = 2; i*i <= n; ++i) {
+			if (n % i == 0) {
+				printf("不是");
+				return 0;
+			}
+			
+		}
+		printf("是");
+	}
     return 0;
 }
