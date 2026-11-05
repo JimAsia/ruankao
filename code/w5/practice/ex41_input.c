@@ -18,12 +18,25 @@ int main(void)
     int n = 0;
 
     /* TODO: 读入 n */
-
+	printf("输入 ");
+	scanf("%d", &n);
     /* TODO: 循环读入 n 个元素 */
-
+	printf("输入 ");
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &a[i]);
+	}
     /* TODO: 输出数组 */
-
+	int sum = 0;
+	double ave;
+	printf("\n数组： ");
+	for (int i = 0; i < n; ++i) {
+		printf("%d ", a[i]);
+		sum += a[i];
+	}
+	printf("\n");
     /* TODO: 求和与平均 */
-
+	printf("总和 = %d\n", sum);
+	ave = (double)sum / n;
+	printf("平均 = %.2f\n", ave);
     return 0;
 }

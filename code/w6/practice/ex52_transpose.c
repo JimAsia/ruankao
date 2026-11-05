@@ -18,6 +18,28 @@ int main(void)
     int r = 0, c = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d%d", &r, &c);
+	//
+	printf("输入\n");
+	for (int i = 0; i < r; ++i) {
+		for (int j = 0; j < c; ++j) {
+			scanf("%d", &a[i][j]);
+		}
+	}
+	//
+	
+	for (int i = 0; i < r; ++i) {
+		for (int j = 0; j < c; ++j) {
+			t[j][i] = a[i][j];
+		}
+	}
+	printf("输出： \n");
+	for (int i = 0; i < c; ++i) {
+		for (int j = 0; j < r; ++j) {
+			printf("%d ", t[i][j]);
+		}
+		printf("\n");
+	}
     return 0;
 }

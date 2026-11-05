@@ -16,6 +16,22 @@ int main(void)
     int n = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d", &n);
+    /* TODO: 循环读入 n 个元素 */
+	printf("输入 ");
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &a[i]);
+	}
+	// 
+	for (int i = 0, j = n-1; i < j; ++i, --j) {
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+	}
+	printf("逆序后： ");
+	for (int i = 0; i < n; ++i) {
+		printf("%d ", a[i]);
+	}
     return 0;
 }

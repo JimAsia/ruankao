@@ -17,6 +17,30 @@ int main(void)
     int n = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d", &n);
+    /* TODO: 循环读入 n 个元素 */
+	printf("输入 ");
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &a[i]);
+	}
+	//
+	int max = a[0];
+	int min = a[0];
+	int index_max = -1;
+	int index_min = -1;
+	for (int i = 1; i < n; ++i) {
+		if (max < a[i]) {
+			max = a[i];
+			index_max = i;
+		}
+		if (min > a[i]) {
+			min = a[i];
+			index_min = i;
+		}
+	}
+	printf("\n");	
+	printf("最大值 = %d，下标 = %d\n", max, index_max);
+	printf("最大值 = %d，下标 = %d\n", min, index_min);
     return 0;
 }

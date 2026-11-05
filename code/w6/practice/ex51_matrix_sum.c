@@ -22,12 +22,35 @@ int main(void)
     int r = 0, c = 0;
 
     /* TODO: 读入 r 和 c */
-
+	printf("输入 ");
+	scanf("%d%d", &r, &c);
+	
+	
     /* TODO: 双层循环读入矩阵 */
-
+	printf("输入\n");
+	for (int i = 0; i < r; ++i) {
+		for (int j = 0; j < c; ++j) {
+			scanf("%d", &a[i][j]);
+		}
+	}
     /* TODO: 输出每行的和 */
+	
+	for (int i = 0; i < r; ++i) {
+		int sum = 0;
+		for (int j = 0; j < c; ++j) {
+			sum += a[i][j];
+		}
+		printf("第 %d 行之和 = %d\n", i + 1, sum);
+	}
 
     /* TODO: 输出每列的和 */
 
+	for (int j = 0; j < c; ++j) {
+		int sum = 0;
+		for (int i = 0; i < r; ++i) {
+			sum += a[i][j];
+		}
+		printf("第 %d 列之和 = %d\n", j + 1, sum);
+	}
     return 0;
 }

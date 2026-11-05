@@ -23,6 +23,25 @@ int main(void)
     int n = 0, key = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d", &n);
+    /* TODO: 循环读入 n 个元素 */
+	printf("输入 ");
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &a[i]);
+	}
+	printf("输入key: ");
+	scanf("%d",&key);
+	// 
+	int index = -1;
+	for (int i = 0; i < n; ++i) {
+		if (a[i] == key) {
+			index = i;
+		}
+	}
+	if (index < 0)
+		printf("输出： %d", index);
+	else
+		printf("输出：下标 = %d", index);
     return 0;
 }

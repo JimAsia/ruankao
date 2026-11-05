@@ -28,6 +28,27 @@ int main(void)
     int n = 0, x = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d", &n);
+    /* TODO: 循环读入 n 个元素 */
+	printf("输入 ");
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &a[i]);
+	}
+	printf("输入x: ");
+	scanf("%d",&x);
+	//
+	int k = 0;
+	for (int i = 0; i < n; ++i) {
+		if (a[i] != x) {
+			a[k] = a[i];
+			++k;
+		}
+	}
+	printf("输出：删除后： ");
+	for (int i = 0; i < k; ++i) {
+		printf("%d ", a[i]);
+	}
+	printf("\n剩余个数 = %d", k);
     return 0;
 }
