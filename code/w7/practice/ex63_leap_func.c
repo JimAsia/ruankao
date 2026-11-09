@@ -9,12 +9,20 @@
 int isLeap(int y)
 {
     /* TODO */
+	if (((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0)) {
+		return 1;
+	}
     return 0;
 }
 
 int main(void)
 {
     /* TODO */
-
+	printf("输出 ");
+	for (int i = 2000; i <= 2010; ++i) {
+		if (isLeap(i)) {
+			printf("%d ", i);
+		}
+	}
     return 0;
 }

@@ -15,13 +15,18 @@
 int sumArray(int a[], int n)
 {
     /* TODO */
-    return 0;
+	int sum = 0;
+	for (int i = 0; i < n; ++i) {
+		sum += a[i];
+	}
+    return sum;
 }
 
 double avgArray(int a[], int n)
 {
     /* TODO: 调用 sumArray */
-    return 0.0;
+	
+    return (double)sumArray(a, n) / n;
 }
 
 int main(void)
@@ -29,6 +34,15 @@ int main(void)
     int a[20], n = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d", &n);
+	if (n == 0) {
+		printf("No number.");
+		return 1;
+	}
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &a[i]);
+	}
+	printf("输出：总和 = %d，平均 = %.2f", sumArray(a, n), avgArray(a, n));
     return 0;
 }

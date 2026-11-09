@@ -15,13 +15,25 @@
 int maxArray(int a[], int n)
 {
     /* TODO */
-    return 0;
+	int max = a[0];
+	for (int i = 1; i < n; ++i) {
+		if (max < a[i]) {
+			max = a[i];
+		}
+	}
+    return max;
 }
 
 int minArray(int a[], int n)
 {
     /* TODO */
-    return 0;
+    int min = a[0];
+	for (int i = 1; i < n; ++i) {
+		if (min > a[i]) {
+			min = a[i];
+		}
+	}
+    return min;
 }
 
 int main(void)
@@ -29,6 +41,11 @@ int main(void)
     int a[20], n = 0;
 
     /* TODO */
-
+	printf("输入 ");
+	scanf("%d", &n);
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &a[i]);
+	}
+	printf("输出：最大值 = %d，最小值 = %d\n", maxArray(a, n), minArray(a, n));
     return 0;
 }

@@ -11,12 +11,17 @@
 long long factorial(int n)
 {
     /* TODO */
-    return 1;
+	if (n <= 1) {
+		return 1;
+	}
+	return n * factorial(n-1);
 }
 
 int main(void)
 {
     /* TODO */
-
+	for (int i = 1; i <= 15; ++i) {
+		printf("%d! = %lld\n", i, factorial(i));
+	}
     return 0;
 }

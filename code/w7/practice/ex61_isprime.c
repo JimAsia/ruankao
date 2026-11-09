@@ -11,12 +11,28 @@
 int isPrime(int n)
 {
     /* TODO */
-    return 0;
+	int found = 1; // 
+    if (n <= 1)
+		return 0;
+	for (int i = 2; i * i <= n; ++i) {
+		if (n % i == 0) {
+			found = 0;
+			break;
+		}
+	}
+	if (found) {
+		return 1;
+	}
+	return 0;
 }
 
 int main(void)
 {
     /* TODO: 遍历 1~50，调 isPrime，是素数就打印 */
-
+	for (int i = 1; i <= 50; ++i) {
+		if (isPrime(i)) {
+			printf("%d ", i);
+		}
+	}
     return 0;
 }

@@ -20,6 +20,23 @@ int main(void)
     char s[200];
 
     /* TODO */
-
+	printf("输入 ");
+	if (fgets(s, sizeof(s), stdin) == NULL) {
+		printf("error");
+		return 1;
+	}
+	for (int i = 0; s[i] != '\0'; ++i) {
+		if (s[i] >= 'A' && s[i] <= 'Z') {
+			s[i] += 32;
+		}
+		else if (s[i] >= 'a' && s[i] <= 'z') {
+			s[i] -= 32;
+		}
+		else {
+			continue;
+		}
+	}
+	printf("输出： ");
+	printf("%s\n", s);
     return 0;
 }

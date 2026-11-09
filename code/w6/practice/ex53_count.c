@@ -17,6 +17,33 @@ int main(void)
     char s[100];
 
     /* TODO */
-
+	printf("输入 ");
+	if (scanf("%99s", s) != 1) {
+		printf("error");
+		return 1;
+	}
+	//
+	int countBig = 0;
+	int countSmall = 0;
+	int countNum = 0;
+	int countOther = 0;
+	for (int i = 0; s[i] != '\0'; ++i) {
+		if (s[i] >= 'A' && s[i] <= 'Z') {
+			++countBig;
+		}
+		else if (s[i] >= 'a' && s[i] <= 'z') {
+			++countSmall;
+		}
+		else if (s[i] >= '0' && s[i] <= '9') {
+			++countNum;
+		}
+		else {
+			++countOther;
+		}
+	}
+	printf("大写 = %d\n", countBig);
+	printf("小写 = %d\n", countSmall);
+	printf("数字 = %d\n", countNum);
+	printf("其他 = %d\n", countOther);
     return 0;
 }

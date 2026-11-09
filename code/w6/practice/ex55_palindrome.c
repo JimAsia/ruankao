@@ -18,6 +18,38 @@ int main(void)
     char s[100];
 
     /* TODO */
-
+	printf("输入 ");
+	if (scanf("%99s", s) != 1) {
+		printf("error");
+		return 1;
+	}
+	//
+	int right = 0;
+	while (s[right] != '\0') ++right;
+	--right;
+	if (right == 0) {
+		printf("%s是回文（单个字符）\n", s);
+		return 0;
+	}
+	//
+	int left = 0;
+	bool found = 1;
+	while (left < right) {
+		if (s[left] == s[right]) {
+			++left;
+			--right;
+		}
+		else {
+			found = 0;
+			break;
+		}
+	}
+	if (found) {
+		printf("%s是回文\n", s);
+	}
+	else {
+		printf("%s不是回文\n", s);
+	}
+	
     return 0;
 }
