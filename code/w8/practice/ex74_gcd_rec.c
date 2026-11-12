@@ -13,7 +13,9 @@
 int gcd(int a, int b)
 {
     /* TODO */
-    return 0;
+	if (b == 0) return a;
+	return gcd(b, a % b);
+ 
 }
 
 int main(void)

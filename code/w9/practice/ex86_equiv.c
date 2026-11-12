@@ -17,18 +17,31 @@ int main(void)
 
     printf("=== ① 取 a[3] 的值 ===\n");
     /* TODO: 用两种写法输出，对比是否相同 */
+	printf("%d ", a[3]);
+	printf("%d\n", *(a + 3));
 
     printf("\n=== ② 取 a[3] 的地址 ===\n");
     /* TODO */
-
+	printf("%p ", &a[3]);
+	printf("%p\n", (a + 3));
+	
     printf("\n=== ③ 把 a[0] 改成 99 ===\n");
     /* TODO: 先输出改之前的，用指针改，再输出改之后的 */
-
+	printf("%d ", *a);
+	*a = 99;
+	printf("%d \n", *a);
+	
     printf("\n=== ④ 求 a[2] 和 a[4] 的间隔 ===\n");
     /* TODO: 两种写法都输出，看是否都是 2 */
-
+	printf("%d ", 4 - 2);
+	printf("%lld \n", (&a[4] - &a[2]));
+	
+	
     printf("\n=== ⑤ 用指针遍历 ===\n");
     /* TODO */
+	for (int *p = a; p < a + 6; ++p) {
+		printf("%d ", *p);
+	}
 
     return 0;
 }

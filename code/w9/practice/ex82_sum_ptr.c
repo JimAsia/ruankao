@@ -15,7 +15,11 @@
 int sumByPtr(int *a, int n)
 {
     /* TODO */
-    return 0;
+	int sum;
+	for (int *p = a; p < a + n; ++p) {
+		sum += *p;
+	}
+    return sum;
 }
 
 int main(void)

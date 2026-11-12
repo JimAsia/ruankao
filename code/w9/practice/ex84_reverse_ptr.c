@@ -17,6 +17,15 @@
 void reverseByPtr(int *a, int n)
 {
     /* TODO */
+	int *first = a;
+	int *last = a + n - 1;
+	while (first < last) {
+		int swap = *first;
+		*first = *last;
+		*last = swap;
+		++first;
+		--last;
+	}
 }
 
 int main(void)

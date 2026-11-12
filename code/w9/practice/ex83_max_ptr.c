@@ -12,7 +12,13 @@
 int maxByPtr(int *a, int n)
 {
     /* TODO */
-    return 0;
+	int max = *a;
+	for (int *p = a + 1; p < a + n; ++p) {
+		if (max < *p) {
+			max = *p;
+		}
+	}
+    return max;
 }
 
 int main(void)

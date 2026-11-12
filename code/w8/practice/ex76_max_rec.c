@@ -10,10 +10,19 @@
  */
 #include <stdio.h>
 
+int max(int a, int b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
 int maxRec(int a[], int n)
 {
     /* TODO */
-    return 0;
+    if (n == 0) return a[0];
+	return max( a[n-1], maxRec(a, n - 1) );
 }
 
 int main(void)

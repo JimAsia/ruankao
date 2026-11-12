@@ -20,7 +20,13 @@
 int myStrlen(const char *s)
 {
     /* TODO */
-    return 0;
+	int count = 0;
+	const char *p = s;
+	while (*p != '\0') {
+		++count;
+		++p;
+	}
+    return count;
 }
 
 int main(void)

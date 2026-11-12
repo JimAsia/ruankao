@@ -10,7 +10,8 @@
 int sumTo(int n)
 {
     /* TODO */
-    return 0;
+	if (n == 1) return 1;
+	return n + sumTo(n - 1);
 }
 
 int main(void)

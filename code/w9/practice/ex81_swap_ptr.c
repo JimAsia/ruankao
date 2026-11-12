@@ -17,6 +17,9 @@
 void swap(int *a, int *b)
 {
     /* TODO */
+	int s = *a;
+	*a = *b;
+	*b = s;
 }
 
 int main(void)
