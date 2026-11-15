@@ -14,6 +14,8 @@
 void myStrcat(char *dst, const char *src)
 {
     /* TODO */
+	while (*dst) ++dst;
+	while ((*dst++ = *src++) != '\0');
 }
 
 int main(void)

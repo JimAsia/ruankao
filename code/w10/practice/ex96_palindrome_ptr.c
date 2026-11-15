@@ -20,6 +20,17 @@
 int isPalindrome(const char *s)
 {
     /* TODO */
+	// const char *left = s;
+	const char *right = s;
+	while (*right) ++right;
+	--right;
+	while (s < right) {
+		if (*s != *right)  {
+			return 0;
+		}
+		++s;
+		--right;
+	}
     return 1;
 }
 

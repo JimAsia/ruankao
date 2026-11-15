@@ -25,15 +25,42 @@
 #define MAXN 100
 
 /* TODO 1：定义结构体 */
+struct Student {
+	int num;
+	char name[MAXN];
+	double score;
+};
 
 int main(void)
 {
     int n;
     /* TODO 2：读入数据 */
-
+    /* TODO 2：声明结构体数组 */
+	
+	printf("输入示例：\n");
+	scanf("%d", &n);
+	struct Student stus[n];
+	
+    /* TODO 3：读入 n 和 n 个学生 */
+	
+	for (int i = 0; i < n; ++i) {
+		scanf("%d%99s%lf", &stus[i].num, stus[i].name, &stus[i].score);
+	}
+	
     /* TODO 3：冒泡排序，比较用 strcmp(a[j].name, a[j+1].name) > 0 */
-
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n - i - 1; ++j) {
+			if (strcmp(stus[j].name, stus[j + 1].name) > 0) {
+				struct Student temp = stus[j];
+				stus[j] = stus[j + 1];
+				stus[j + 1] = temp;
+			}
+		}
+	}
     /* TODO 4：输出 */
-
+	printf("输出示例：\n");
+	for (int i = 0; i < n; ++i) {
+		printf("%d %s %.1lf\n", stus[i].num, stus[i].name, stus[i].score);
+	}
     return 0;
 }

@@ -18,14 +18,21 @@
 #include <math.h>
 
 /* TODO 1：定义 struct Point */
+struct Point {
+	double x;
+	double y;
+};
 
 int main(void)
 {
     /* TODO 2：声明两个 struct Point 变量 */
-
+	struct Point p1;
+	struct Point p2;
     /* TODO 3：读入 4 个数（%lf） */
-
+	printf("输入示例：\n");
+	scanf("%lf%lf%lf%lf", &p1.x, &p1.y, &p2.x, &p2.y);
     /* TODO 4：算距离并输出 */
-
+	printf("输出示例：\n");
+	printf("距离 = %.2lf", sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y) ));
     return 0;
 }

@@ -18,6 +18,7 @@
 void myStrcpy(char *dst, const char *src)
 {
     /* TODO */
+	while ((*dst++ = *src++) != '\0');
 }
 
 int main(void)

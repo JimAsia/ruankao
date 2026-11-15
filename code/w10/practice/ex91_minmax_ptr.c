@@ -10,6 +10,17 @@
 void minMax(int *a, int n, int *outMin, int *outMax)
 {
     /* TODO */
+	*outMin = *a;
+	*outMax = *a;
+	int *p = a + 1;
+	for (;p < a + n; ++p) {
+		if (*outMin > *p) {
+			*outMin = *p;
+		}
+		if (*outMax < *p) {
+			*outMax = *p;
+		}
+	}
 }
 
 int main(void)

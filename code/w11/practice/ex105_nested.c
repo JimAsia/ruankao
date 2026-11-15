@@ -20,14 +20,34 @@ struct Date {
 };
 
 /* TODO 1：定义 struct Person */
+typedef struct Date Date;
+
+typedef struct {
+	char name[20]; 
+	Date birth;
+}Person;
 
 int main(void)
 {
     /* TODO 2：读入姓名和生日 */
-
+	Person person;
+	printf("输入示例：\n");
+	scanf("%19s%d%d%d", person.name, &person.birth.y, &person.birth.m, &person.birth.d);
     /* TODO 3：算年龄（注意生日没到要减 1） */
-
+	int year = 2026;
+	int month = 10;
+	int day = 24;
+	if (person.birth.m > month) {
+		year = year - person.birth.y + 1;
+	}
+	else if ((person.birth.m == month) && (person.birth.d > day)) {
+		year = year - person.birth.y + 1;
+	}
+	else {
+		year = year - person.birth.y;
+	}
     /* TODO 4：输出，月份和日期补零到 2 位（%02d） */
-
+	printf("输出示例：\n");
+	printf("%s %d-%d-%d 年龄 %d\n", person.name, person.birth.y, person.birth.m, person.birth.d, year);
     return 0;
 }

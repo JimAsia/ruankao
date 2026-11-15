@@ -19,15 +19,53 @@
 #include <stdio.h>
 
 /* TODO 1：定义枚举 */
+enum Weekday { MON = 1, TUE, WED, THU, FRI, SAT, SUN };
 
 int main(void)
 {
     int n;
     /* TODO 2：读入 n */
-
+	printf("输入示例：\n");
+	scanf("%d", &n);
     /* TODO 3：判断范围，转枚举 */
-
+	printf("输出示例：\n");
+	switch (n) {
+		case MON:
+			printf("MON ");
+			break;
+		case TUE:
+			printf("TUE ");
+			break;
+		case WED:
+			printf("WED ");
+			break;
+		case THU:
+			printf("THU ");
+			break;
+		case FRI:
+			printf("FRI ");
+			break;
+		case SAT:
+			printf("SAT ");
+			break;
+		case SUN:
+			printf("SUN ");
+			break;
+	}
+	
     /* TODO 4：switch 输出英文缩写 + 工作日/休息日 */
-
+	switch (n) {
+		case MON:
+		case TUE:
+		case WED:
+		case THU:
+		case FRI:
+			printf("工作日\n");
+			break;
+		case SAT:
+		case SUN:
+			printf("休息日\n");
+			break;
+	}
     return 0;
 }

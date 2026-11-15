@@ -20,6 +20,8 @@
 void retarget(int **pp, int *target)
 {
     /* TODO */
+	*pp = target;
+
 }
 
 int main(void)
@@ -32,5 +34,7 @@ int main(void)
     retarget(&p, &b);
 
     printf("retarget 之后：*p = %d（应该指向 b）\n", *p);
+	printf("%p\n", p);
+	printf("%p\n", &b);
     return 0;
 }

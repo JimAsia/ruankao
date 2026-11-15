@@ -15,6 +15,18 @@
 void reverseStr(char *s)
 {
     /* TODO */
+	// s == left
+	char *right = s;
+	while (*right) ++right;
+	--right;
+	while (s < right) {
+		char swap = *s;
+		*s = *right;
+		*right = swap;
+		++s;
+		--right;
+	}
+	
 }
 
 int main(void)
