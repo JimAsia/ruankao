@@ -24,10 +24,42 @@ int main(void)
     const char *path = "test113.txt";
 
     /* TODO 1：写测试文件（3 行，注意每行末尾要有 \n） */
-
+	
+	FILE *out = fopen(path, "w");
+	if (out == NULL) {
+		perror("fopen");
+		return 1;
+	}
+	fprintf(out, "hello world\n");
+	fprintf(out, "C programming 2026\n");
+	fprintf(out, "file io is easy\n");
+	fclose(out);
     /* TODO 2：用 "r" 打开，fgetc 循环统计 */
-
+	FILE *in = fopen(path, "r");
+	if (in == NULL) {
+		perror("fopen");
+		return 1;
+	}
+	int lines = 0, words = 0, word = 0, inWord = 0;
+	int chars = 0;
+	while ((word = fgetc(in)) != EOF) {
+		++chars;
+		if (word == '\n') {
+			++lines;
+		}
+		if (word == ' ' || word == '\n' || word == '\t') {
+			inWord = 0;
+		}
+		else if(!inWord) {
+			inWord = 1;
+			++words;
+		}
+	}
+	fclose(in);
     /* TODO 3：输出 行 / 字符 / 单词 */
-
+	printf("预期输出：\n");
+	printf("行 %d ", lines);
+	printf("字符 %d ", chars);
+	printf("单词 %d\n", words);
     return 0;
 }

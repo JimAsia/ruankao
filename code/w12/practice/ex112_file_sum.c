@@ -23,12 +23,46 @@ int main(void)
 {
     const char *path = "nums.txt";
     int data[10] = {12, 7, 30, 5, 88, 43, 21, 9, 66, 100};
-
+	printf("生成的数据固定为：");
+	for(int i = 0; i < 10; ++i) {
+		printf("%d ", data[i]);
+	}
+	printf("\n");
     /* TODO 1：用 "w" 模式把 data 写入文件，每行一个 */
-
+	FILE *out = fopen(path, "w");
+	if (out == NULL) {
+		perror("fopen");
+		return 1;
+	}
+	for (int i = 0; i < 10; ++i) {
+		fprintf(out, "%d ", data[i]);	
+	}
+	fclose(out);
     /* TODO 2：用 "r" 模式读回来，边读边算 sum / max / count */
-
+	int d = 0;
+	int sum = 0;
+	double aver = 0;
+	int count = 0;
+	int max = data[0];
+	FILE *in = fopen(path, "r");
     /* TODO 3：输出结果 */
-
+	if (in == NULL) {
+		perror("fopen");
+		return 1;
+	}
+	while (fscanf(in, "%d", &d) == 1) {
+		sum += d;
+		++count;
+		if (max < d) {
+			max = d;
+		}
+	}
+	aver = (double)sum / count;
+	printf("预期输出：\n");
+	printf("共读 %d 个数\n", count);
+	printf("总和 = %d\n", sum);
+	printf("平均 = %.2lf\n", aver);
+	printf("最大 = %d\n", max);
+	fclose(in);
     return 0;
 }

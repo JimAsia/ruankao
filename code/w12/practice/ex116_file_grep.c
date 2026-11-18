@@ -30,12 +30,40 @@ int main(void)
     const char *path = "text116.txt";
 
     /* TODO 1：写测试文件 */
-
+	FILE *fp = fopen(path, "w");
+	if (fp == NULL) {
+		perror("fopen");
+		return 1;
+	}
+	fprintf(fp, "The quick brown fox\n");
+	fprintf(fp, "jumps over the lazy dog\n");
+	fprintf(fp, "C programming is fun\n");
+	fprintf(fp, "file io is easy\n");
+	fclose(fp);
     /* TODO 2：读入关键字（用 %19s） */
-
+	char ch[20];
+	printf("输入示例：\n");
+	scanf("%19s", ch);
+	
+	
     /* TODO 3：fgets 循环，用 strstr 判断，输出行号 */
-
+	FILE *in = fopen(path, "r");
+	if (in == NULL) {
+		perror("fopen");
+		return 1;
+	}
+	int countLine = 0;
+	int lines = 0;
+	char line[128];
+	while (fgets(line, sizeof(line), in) != NULL) {
+		++lines;
+		if (strstr(line, ch) != NULL) {
+			++countLine;
+			printf("第 %d 行：%s", lines, line);
+		}
+	}
     /* TODO 4：输出命中行数 */
-
+	printf("命中 %d 行\n", countLine);
+	fclose(in);
     return 0;
 }
