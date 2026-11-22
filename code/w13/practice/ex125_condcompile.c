@@ -27,11 +27,44 @@
 #include <stdio.h>
 
 /* TODO 1：用 #ifdef LANG_CN 定义 MSG_HELLO 和 MSG_RESULT 两个宏 */
+
+// 如果编译时定义了宏 LANG_CN（如 -DLANG_CN），则编译下面的中文分支；否则跳到 #else。
+#ifdef LANG_CN
+	#define MSG_HELLO "[调试] 程序开始运行"  // 定义MSG_HELLO内容为字符串"[调试] 程序开始运行"
+	#define MSG_DETAIL "[详细] 正在计算 %d + %d"
+	#define MSG_RESULT "结果 = %d"
+	#define MSG_BYE "[调试] 程序结束"
+#else
+    #define MSG_HELLO   "[DEBUG] Program started"
+    #define MSG_DETAIL  "[VERBOSE] Computing %d + %d"
+    #define MSG_RESULT  "Result = %d"
+    #define MSG_BYE     "[DEBUG] Program ended"
+#endif
+
 /* TODO 2：用 #ifdef DEBUG 定义 DBG 宏，否则定义成空 */
+
+// 如果定义了 DEBUG（如 -DDEBUG），DBG 展开为真正的 printf
+#ifdef DEBUG
+	#define DBG(fmt, ...) printf(fmt "\n", ##__VA_ARGS__)
+#else
+	#define DBG(fmt, ...) ((void)0)
+#endif
+
+#ifdef VERBOSE
+    #define VERB(fmt, ...) printf(fmt "\n", ##__VA_ARGS__)
+#else
+    #define VERB(fmt, ...) ((void)0)
+#endif
 
 int main(void)
 {
     /* TODO 3：按开关输出对应内容 */
-
+	DBG(MSG_HELLO); // DEBUG 控制
+	int a = 1, b = 2;
+	VERB(MSG_DETAIL, a, b); // VERBOSE 控制（不是 DBG）
+	int result = a + b;
+	printf(MSG_RESULT "\n", result);  // 结果始终输出
+	
+	DBG(MSG_BYE);  // DEBUG 控制
     return 0;
 }

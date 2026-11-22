@@ -24,14 +24,25 @@
 
 #include <stdio.h>
 
+
 /* TODO 1：MAX */
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
 /* TODO 2：MIN */
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
 /* TODO 3：CLAMP（可以复用 MAX/MIN） */
+#define CLAMP(x, lo, hi) ((x) > (hi) ? (hi) : (x) < (lo) ? (lo) : (x))
 /* TODO 4：SQUARE */
+#define SQUARE(x) ((x) * (x))
 
 int main(void)
 {
     /* TODO 5：按上面的要求逐个输出验证 */
-
+	int a = 3, b = 6;
+	printf("2 * MAX(3, 4) = %d\n", 2 * MAX(3, 4));
+	printf("MAX(a + 1, b) = %d\n", MAX(a + 1, b));
+	printf("SQUARE(1 + 2) = %d\n", SQUARE(1 + 2));
+	printf("CLAMP(15, 0, 10) = %d\n", CLAMP(15, 0, 10));
+	printf("CLAMP(-5, 0, 10)  = %d\n", CLAMP(-5, 0, 10));
+	printf("CLAMP(5, 0, 10)  = %d\n", CLAMP(5, 0, 10));
     return 0;
 }

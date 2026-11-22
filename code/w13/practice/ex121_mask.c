@@ -26,14 +26,30 @@
 #include <stdio.h>
 
 /* TODO 1：写 setBit */
+unsigned long setBit(unsigned long x, int n) {
+	return x |= (1UL << n);
+}
 /* TODO 2：写 clearBit */
+unsigned long clearBit(unsigned long x, int n) {
+	return x &= ~(1UL << n);
+}
 /* TODO 3：写 testBit */
+unsigned long testBit(unsigned long x, int n) {
+	return (x >> n) & 1UL;
+}
 
 int main(void)
 {
-    unsigned int x = 10;
+    unsigned long x = 10;
 
     /* TODO 4：依次调用并输出 */
-
+	x = setBit(x, 0);
+	printf("置位 bit0 后 = %lu\n", x);
+	x = clearBit(x, 3);
+	printf("清位 bit3 后 = %lu\n", x);
+	
+	printf("测试 bit1 = %lu\n", testBit(x, 1));
+	
+	printf("测试 bit2 = %lu\n", testBit(x, 2));
     return 0;
 }

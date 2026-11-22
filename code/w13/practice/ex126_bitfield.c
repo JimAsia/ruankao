@@ -25,11 +25,27 @@
 #include <stdio.h>
 
 /* TODO 1：定义 struct RGB */
+struct RGB {  
+	unsigned int r : 8;
+	unsigned int g : 8; 
+	unsigned int b : 8; 
+};
+
 /* TODO 2：定义 struct RGB16 */
+struct RGB16 { 
+	unsigned int r : 5; 
+	unsigned int g : 6; 
+	unsigned int b : 5; 
+};
 
 int main(void)
 {
     /* TODO 3：两个变量分别赋值并输出 */
-
+	struct RGB temp1 = { .r = 200, .g = 150, .b = 100 };
+	struct RGB16 temp2 = { .r = 200, .g = 150, .b = 100 };
+	printf("struct RGB 占 %llu 字节\n", sizeof(temp1));
+	printf("r=%u g=%u b=%u\n", temp1.r, temp1.g, temp1.b);
+	printf("struct RGB16 占 %llu 字节\n", sizeof(temp2));
+	printf("r=%u g=%u b=%u\n", temp2.r, temp2.g, temp2.b);
     return 0;
 }
